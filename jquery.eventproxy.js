@@ -1,9 +1,9 @@
 
 /**
  * @name EventProxy
- * @version 1.0.0
- * @created 2015.11.28
- * @lastmodified 2015.11.28
+ * @version 1.0.1
+ * @created 2015.12.04
+ * @lastmodified 2015.12.04
  * @description A event listener plugin based on jQuery 2.1.4
  * @author Jonathan BigDog (https://github.com/lilinwan)
  * @url https://github.com/lilinwan/EventProxy.git
@@ -62,5 +62,10 @@ EventProxy.prototype = {
 			times = _this.events[eventName].times - 1;
 		_this.events[eventName].eventQueue[times].resolve();
 		_this.events[eventName].times--;
+	},
+
+	hasEvent: function (eventName) {
+		var _this = this;
+		return _this.events.hasOwnProperty(eventName);
 	}
 }
